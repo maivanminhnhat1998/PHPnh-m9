@@ -14,7 +14,11 @@ class sachModel extends CI_Model{
 	function insert_user($data) {
 		$this->db->insert("users",$data);
 		
-	}
-
+	} 
+		function getslide() {
+		$data=$this->db->get("slide");
+            return $data->result();
+		
+	} 
 
 }

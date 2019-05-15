@@ -6,7 +6,9 @@ class sachController extends CI_Controller {
 
 // trang chu
 	public function index() {
-		$this->load->view("web/index");
+		$this->load->model("sachModel");
+		$data = $this->sachModel->getslide();
+		$this->load->view("web/index",['slide'=>'web/templates/slide','data'=>$data]);
 	}
 
 	public function signup() {
@@ -16,6 +18,7 @@ class sachController extends CI_Controller {
 	public function login() {
  		$this->load->view("web/login");
 	}
+//
 
 // signup 
 
